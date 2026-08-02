@@ -42,7 +42,7 @@ def run(win_rate, risk, sig_per_day, intraday_breach=True, rng=RNG):
             loser = rng.random() >= win_rate
             if loser:
                 mae = risk                       # taken to the stop
-                r = 2.0
+                r = -2.0
             else:
                 mae = rng.uniform(0, WINNER_MAE_MAX) * risk
                 r = 0.5 if rng.random() < SMALL_WIN_SHARE else 1.5
