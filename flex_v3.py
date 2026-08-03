@@ -45,7 +45,7 @@ def run(win_rate, risk, sig_per_day, intraday_breach=True, rng=RNG):
                 r = -1.0
             else:
                 mae = rng.uniform(0, WINNER_MAE_MAX) * risk
-                r = 2.0 #if rng.random() < SMALL_WIN_SHARE else 1.5
+                r = 2.0 if rng.random() < SMALL_WIN_SHARE else 1.5
 
             # equity trough while this trade is open
             if intraday_breach:
